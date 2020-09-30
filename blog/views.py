@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from . models import Post
+from .models import Post
 
 # Create your views here.
 
@@ -9,8 +9,8 @@ from . models import Post
 '''
 
 def all_posts(request):
-    all_posts = models.Post.objects.all()
-    return render(request,'blog/all_posts.html',{'posts':all_posts})
+    all_posts = Post.objects.all()
+    return render(request,'blog/all_posts.html', {'posts':all_posts})
 
 '''
 any view should return something
@@ -21,4 +21,5 @@ render must take the request, html path, funcitons actual name and html name to 
 
 
 def post_detail(request, post_id):
-    pass
+    single_post = Post.objects.get(id=post_id)
+    return render(request, 'blog/post_detail.html', {'post_detail':single_post})
