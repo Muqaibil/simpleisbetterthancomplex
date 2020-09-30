@@ -20,3 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('blog/', include('blog.urls', namespace='blog'))
 ]
+
+admin.site.site_header = 'Simple is Better Thank Complex | Admin'
