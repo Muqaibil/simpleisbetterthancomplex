@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Post
+from .forms import PostForm
 
 # Create your views here.
 
@@ -23,3 +24,15 @@ render must take the request, html path, funcitons actual name and html name to 
 def post_detail(request, post_id):
     single_post = Post.objects.get(id=post_id)
     return render(request, 'blog/post_detail.html', {'post_detail':single_post})
+
+
+def New_Post(request):
+    form = PostForm()
+    return render(request, 'blog/new_post.html', {'form':form})
+    pass
+
+
+
+def Post_Edit(request):
+    pass
+
