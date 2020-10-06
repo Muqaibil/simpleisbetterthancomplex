@@ -27,9 +27,16 @@ def post_detail(request, post_id):
 
 
 def New_Post(request):
-    form = PostForm()
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES) #request.FILES should be included if there an upload of Audio or Image files so the fucntion can post the files as well as the forms text entries which was sent via the method request.POST
+        if form.is_valid:
+            form.save()
+
+    else:
+        form = PostForm()
+
     return render(request, 'blog/new_post.html', {'form':form})
-    pass
+    
 
 
 
