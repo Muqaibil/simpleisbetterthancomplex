@@ -1,5 +1,8 @@
 <h2>Welcome to single post detail</h2>
 <br>
+<hr>
+<a href="{% url 'blog:edit_post' post_detail.id %}">Edit This Post</a>
+
 <h3>{{post_detail.id}}. {{post_detail}}</h3>
 {{post_detail.content}}
 

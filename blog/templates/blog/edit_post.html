@@ -1,10 +1,10 @@
-<h2>Welcome to New Post Page</h2>
+<h2>Welcome to Edit Post</h2>
 
 
 <form method="POST" enctype="multipart/form-data"> <!--enctype MUST be included whenever there audio or image file to be uploaded with form -->
     {% csrf_token %}
 
     {{form}}<br>
-    <input type="submit" value="Add New Post">
+    <input type="submit" value="Edit Post">
 
 </form>
