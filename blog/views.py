@@ -19,8 +19,6 @@ any view should return something
 render must take the request, html path, funcitons actual name and html name to use it in templates
 '''
 
-
-
 def post_detail(request, post_id):
     single_post = Post.objects.get(id=post_id)
     return render(request, 'blog/post_detail.html', {'post_detail':single_post})
@@ -54,5 +52,23 @@ def Edit_Post(request, post_id):
     
 
 # Below are Function Based-views
+from django.views.generic import ListView, DetailView, CreateView,UpdateView
+
+class AllPosts(ListView):
+    model = Post
+    
+
+class PostDetail(DetailView):
+    model = Post
 
 
+class NewPost(CreateView):
+    model = Post
+    fields = "__all__"
+    success_url = "/blog/cbv"
+
+
+class EditPost(UpdateView):
+    model = Post
+    fields = "__all__"
+    success_url = "/blog/cbv"

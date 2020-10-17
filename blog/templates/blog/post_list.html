@@ -1,0 +1,13 @@
+<h2>Welcome to Class-Based View</h2>
+
+<h2>Welcome to All Posts</h2>
+
+<h3><a href="{% url 'blog:new_post' %}">Add New Post</a></h3>
+
+<hr>
+
+{% for posts in object_list %}
+
+    <h2><a href="{% url 'blog:post_detail' posts.id %}">{{posts}}</a> </h2>
+
+{% endfor %}
