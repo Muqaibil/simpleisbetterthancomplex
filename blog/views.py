@@ -21,7 +21,7 @@ render must take the request, html path, funcitons actual name and html name to 
 
 def post_detail(request, post_id):
     single_post = Post.objects.get(id=post_id)
-    return render(request, 'blog/post_detail.html', {'post_detail':single_post})
+    return render(request, 'blog/blog_detail.html', {'single_post':single_post})
 
 
 def New_Post(request):

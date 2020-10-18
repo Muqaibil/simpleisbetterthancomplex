@@ -1,0 +1,10 @@
+<h2>Welcome to Function-Based View</h2>
+
+<h2>Welcome to single post detail</h2>
+<br>
+<hr>
+<a href="{% url 'blog:edit_post' single_post.id %}">Edit This Post</a>
+
+<h3>{{single_post.id}}. {{single_post}}</h3>
+{{single_post.content}}
+
